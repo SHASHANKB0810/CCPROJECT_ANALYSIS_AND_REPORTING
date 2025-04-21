@@ -5,7 +5,7 @@
 ### Team Members
 - **Siddharth S** – PES1UG22AM160  
 - **Shashank B** – PES1UG22AM150  
-- **Skandesh K** – PES1UG22AM162  
+- **Skandesh K K** – PES1UG22AM162  
 
 ---
 
