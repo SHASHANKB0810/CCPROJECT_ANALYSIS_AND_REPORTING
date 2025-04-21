@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  reviews-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-reviews
+    ports:
+      - "5000:5000"
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=reviews_user
+      - MYSQL_PASSWORD=reviews_password
+      - MYSQL_DATABASE=reviews_db
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  loyalty-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-loyalty
+    ports:
+      - "5001:5001"
+    environment:
+      - MONGO_HOST=mongodb
+    depends_on:
+      - mongodb
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=reviews_db
+      - MYSQL_USER=reviews_user
+      - MYSQL_PASSWORD=reviews_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "reviews_user", "--password=reviews_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mongodb:
+    image: mongo:5.0
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - app-network
+
+  frontend:
+    image: nginx:alpine
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./app.js:/usr/share/nginx/html/app.js
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  mongo_data:
