@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project is focused on **user feedback analytics** as part of a cloud-based solution. We built a complete pipeline for collecting, storing, analyzing, and reporting user feedback data using modern tools and technologies in the cloud computing ecosystem.
 
@@ -17,7 +17,7 @@ We developed a full-stack web app using **Streamlit** as the front end and **Sup
 
 ---
 
-## 🛠️ Tools and Technologies Used
+##  Tools and Technologies Used
 
 | Tool/Technology | Purpose |
 |-----------------|---------|
@@ -32,7 +32,7 @@ We developed a full-stack web app using **Streamlit** as the front end and **Sup
 
 ---
 
-## ✨ Features
+##  Features
 
 ### Streamlit Web App Interface
 Interactive UI for feedback collection and report access.
@@ -54,7 +54,7 @@ Submit → Store → Analyze → Visualize → Report
 
 ---
 
-## 🔁 Workflow
+## Workflow
 
 1. User submits feedback via the Streamlit form.
 2. Data is stored in the cloud using Supabase (PostgreSQL).
