@@ -1,4 +1,4 @@
-# 🧠 CCPROJECT_ANALYSIS_AND_REPORTING
+# CCPROJECT_ANALYSIS_AND_REPORTING
 
 ## Cloud Computing Project – Phase 2
 
