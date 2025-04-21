@@ -46,6 +46,9 @@ Forms adapt based on the database schema to collect detailed responses.
 ### Cloud-Based Data Storage
 Feedback entries are securely stored in Supabase (PostgreSQL).
 
+![WhatsApp Image 2025-04-21 at 20 19 41_6850371f](https://github.com/user-attachments/assets/f9337a6f-978d-4a32-869e-6746b3c5dbfc)
+
+
 ### Data Retrieval and Analysis
 Processed using Pandas and visualized with Matplotlib & Seaborn.
 ![WhatsApp Image 2025-04-21 at 21 08 38_ea74402f](https://github.com/user-attachments/assets/b14aa45b-28cc-4883-a2a0-3e73b22bc2fc)
