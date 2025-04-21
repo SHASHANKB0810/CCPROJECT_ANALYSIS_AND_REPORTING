@@ -4,7 +4,7 @@ Name : Siddharth S       SRN : PES1UG22AM160
 Name : Shashank B       SRN : PES1UG22AM150
 Name : Skandesh K       SRN : PES1UG22AM162
 
-Github Link : 
+Github Link : https://github.com/SHASHANKB0810/CCPROJECT_ANALYSIS_AND_REPORTING
 
 Tools Used : 
 Python – Core programming language.
@@ -34,3 +34,57 @@ Features
 Visualize feedback trends using Matplotlib and Seaborn.
 Generate downloadable PDF reports summarizing the feedback.
 User-friendly and interactive web experience.
+
+
+Microservice 1: User Analytics and Behavior Reporting
+
+This microservice focuses on tracking how users interact with our platform. It collects data like session times, traffic sources (where users came from — ads, Google, etc.), what users clicked, what they searched for, and how long they stayed. Using this data, it creates detailed reports that show patterns like: which parts of the app are most popular, when users are most active, and where we are getting the most traffic from. This helps us understand user behavior, improve the user experience, and focus marketing efforts better.
+
+In Points:
+
+Tracks user sessions, clicks, searches, and traffic sources.
+
+Collects data on user activity: when they login, logout, and what they browse.
+
+Analyzes user engagement: most visited pages, average session times, peak usage hours.
+
+Helps in marketing by showing which traffic sources are bringing the most users.
+
+Reports help the business improve the app and marketing strategies based on real user behavior.
+
+Microservice 2: User Behavior Analysis
+
+This microservice looks deeper into how users behave while they use the app — not just where they click, but how they move, how often they return, and what patterns they follow. It studies things like: are users coming back every day? Are they getting stuck somewhere and leaving? Are there users who become loyal? It also calculates important metrics like retention rate (how many users keep coming back), churn rate (how many users stop using the app), and conversion rate (how many users actually complete an action, like booking a flight or hotel).
+This analysis helps make smarter decisions — like where to fix problems in the app, and how to keep users happy and coming back.
+
+In Points:
+
+Tracks user journey inside the app (page flow, actions taken, time spent).
+
+Analyzes user retention: how often users return after their first visit.
+
+Finds drop-off points: where users quit without completing actions.
+
+Calculates key metrics like Retention Rate, Churn Rate, and Conversion Rate.
+
+Helps optimize the app to improve user satisfaction and increase bookings.
+
+Provides detailed behavior reports for product and business teams.
+
+Microservice 3: Feedback Analytics and Reporting
+
+This microservice focuses on collecting and analyzing feedback from users about flights, hotels, trains, and buses. It gathers information like ratings, comments, and categories of complaints or praise. Then, it analyzes the feedback to find trends — for example, common complaints about hotel cleanliness or high ratings for flight services. It visualizes the results in graphs and also generates reports (like PDFs) to easily share insights. This helps the company identify areas that need improvement and maintain quality service.
+
+In Points:
+
+Collects detailed user feedback: ratings, comments, categories (flight, hotel, train, bus).
+
+Organizes the feedback based on service type and satisfaction levels.
+
+Performs sentiment analysis and trend analysis on user comments.
+
+Generates visual reports (charts, graphs) using tools like Matplotlib and Seaborn.
+
+Creates PDF reports for easy sharing with management teams.
+
+Helps improve service quality by highlighting problem areas and strengths.
