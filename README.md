@@ -36,6 +36,9 @@ We developed a full-stack web app using **Streamlit** as the front end and **Sup
 
 ### Streamlit Web App Interface
 Interactive UI for feedback collection and report access.
+![WhatsApp Image 2025-04-21 at 20 19 12_077b9567](https://github.com/user-attachments/assets/3516978e-c6f8-4e4c-aaa0-def79429cdc1)
+
+
 
 ### Dynamic Feedback Forms
 Forms adapt based on the database schema to collect detailed responses.
@@ -45,9 +48,15 @@ Feedback entries are securely stored in Supabase (PostgreSQL).
 
 ### Data Retrieval and Analysis
 Processed using Pandas and visualized with Matplotlib & Seaborn.
+![WhatsApp Image 2025-04-21 at 21 08 38_ea74402f](https://github.com/user-attachments/assets/b14aa45b-28cc-4883-a2a0-3e73b22bc2fc)
+
+
 
 ### Automated PDF Report Generation
 Generate and download clean, professional summaries using ReportLab.
+![WhatsApp Image 2025-04-21 at 20 16 57_7a1d8ff6](https://github.com/user-attachments/assets/020339aa-a67f-4fdb-9041-bf7b33ce1ea6)
+
+
 
 ### End-to-End Feedback Workflow
 Submit → Store → Analyze → Visualize → Report
