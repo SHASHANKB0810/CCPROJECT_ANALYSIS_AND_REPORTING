@@ -7,14 +7,14 @@ Name : Skandesh K       SRN : PES1UG22AM162
 Github Link : https://github.com/SHASHANKB0810/CCPROJECT_ANALYSIS_AND_REPORTING
 
 Tools Used : 
-Python – Core programming language.
-Supabase – Cloud database (PostgreSQL) for data storage and sharing.
-PostgreSQL – Backend database.
-Pandas – Data processing and analysis.
-Matplotlib – Data visualization (graphs and charts).
-Seaborn – Advanced and beautiful data visualizations.
-ReportLab (Platypus) – Generating PDF reports.
-Streamlit – Front-end web app framework.
+Python – Core programming language.
+Supabase – Cloud database (PostgreSQL) for data storage and sharing.
+PostgreSQL – Backend database.
+Pandas – Data processing and analysis.
+Matplotlib – Data visualization (graphs and charts).
+Seaborn – Advanced and beautiful data visualizations.
+ReportLab (Platypus) – Generating PDF reports.
+Streamlit – Front-end web app framework.
 
 We used the web app using Python and hosted it with Streamlit. For storing and sharing the data, we used Supabase, which provides a common online database built on PostgreSQL. The app allows users to give entries to the database. We designed the input forms to take more details based on our database structure. After users submit feedback, we pull the data from Supabase and use tools like Pandas, Matplotlib, and Seaborn to analyze and create graphs. We also used ReportLab to make PDF reports. 
 
@@ -74,33 +74,33 @@ Helps improve service quality by highlighting problem areas and strengths.
 
 ---
 
-## 🐳 Docker Containers and Deployment
+##  Docker Containers and Deployment
 
 To ensure scalability and easy deployment, the entire project is containerized using **Docker**, and coordinated using **Docker Compose**. Each microservice, along with the frontend and gateway, runs in its own isolated container.
 
 ### Containers:
 
-1. **user-analytics-service**
+1. user-analytics-service
    - Runs the `useranalytics.py` script.
    - Handles data collection for user sessions, page visits, and referral tracking.
 
-2. **user-behavior-service**
+2. user-behavior-service
    - Runs the `behavior_analysis.py` script.
    - Analyzes user retention, churn, and interaction behavior inside the app.
 
-3. **feedback-analysis-service**
+3. feedback-analysis-service
    - Runs the `feedback_analysis_supabase.py` script.
    - Pulls feedback from Supabase, analyzes ratings and comments, and generates graphs/PDFs.
 
-4. **streamlit-web-app**
+4. streamlit-web-app
    - Runs `streamlit_app.py`.
    - Provides the front-end interface for user input and viewing reports.
 
-5. **main-gateway**
+5. main-gateway
    - Entry point of the system.
    - Defined in `main.py`, routes requests to the appropriate microservices.
 
-### Docker Compose:
+Docker Compose:
 The `docker-compose.yml` file located in the `main_gateway` directory brings up all services at once. It links containers via networks, defines ports, and sets dependencies for a smooth startup.
 
 > 🔁 This setup enables the system to be deployed with a single command (`docker-compose up`) and ensures all microservices communicate reliably.
