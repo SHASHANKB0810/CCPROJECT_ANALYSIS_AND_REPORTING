@@ -16,12 +16,42 @@ This project is focused on **user feedback analytics** as part of a cloud-based 
 We developed a full-stack web app using **Streamlit** as the front end and **Supabase (PostgreSQL)** as the cloud-hosted backend. Users can submit feedback through interactive forms. The system retrieves and analyzes this data using **Pandas**, **Matplotlib**, and **Seaborn**, then generates dynamic **PDF reports** using **ReportLab**.
 
 ---
+##  Docker Containers and Deployment
 
+To ensure scalability and easy deployment, the entire project is containerized using **Docker**, and coordinated using **Docker Compose**. Each microservice, along with the frontend and gateway, runs in its own isolated container.
+
+### Containers:
+
+1. user-analytics-service
+   - Runs the `useranalytics.py` script.
+   - Handles data collection for user sessions, page visits, and referral tracking.
+
+2. user-behavior-service
+   - Runs the `behavior_analysis.py` script.
+   - Analyzes user retention, churn, and interaction behavior inside the app.
+
+3. feedback-analysis-service
+   - Runs the `feedback_analysis_supabase.py` script.
+   - Pulls feedback from Supabase, analyzes ratings and comments, and generates graphs/PDFs.
+
+4. streamlit-web-app
+   - Runs `streamlit_app.py`.
+   - Provides the front-end interface for user input and viewing reports.
+
+5. main-gateway
+   - Entry point of the system.
+   - Defined in `main.py`, routes requests to the appropriate microservices.
+
+Docker Compose:
+The `docker-compose.yml` file located in the `main_gateway` directory brings up all services at once. It links containers via networks, defines ports, and sets dependencies for a smooth startup.
+
+> This setup enables the system to be deployed with a single command (`docker-compose up`) and ensures all microservices communicate reliably.
 ##  Tools and Technologies Used
 
 | Tool/Technology | Purpose |
 |-----------------|---------|
 | Python | Core programming language |
+|Docker|images|containers|
 | Supabase | Cloud-hosted PostgreSQL database |
 | PostgreSQL | Backend database system |
 | Pandas | Data processing and analysis |
