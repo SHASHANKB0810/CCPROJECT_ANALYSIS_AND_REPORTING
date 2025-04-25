@@ -14,9 +14,9 @@ def main():
 
         # Define script paths (use raw strings for Windows paths)
         script_paths = {
-            '1': r"C:\Users\shash\Desktop\ccmicroservice\useranalytics.py",
-            '2': r"C:\Users\shash\Desktop\ccmicroservice\behavior_analysis.py",
-            '3': r"C:\Users\shash\Desktop\ccmicroservice\feedback_analysis_supabase.py" # Corrected name
+            '1': r"useranalytics.py",
+            '2': r"behavior_analysis.py",
+            '3': r"feedback_analysis_supabase.py" # Corrected name
         }
 
         if choice.lower() == 'exit':
