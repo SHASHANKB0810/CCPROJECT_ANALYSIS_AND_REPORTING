@@ -27,6 +27,7 @@ We used the web app using Python and hosted it with Streamlit. For storing and s
 •Generated PDF reports using ReportLab.
 •The whole system makes it easy to collect, analyze and present report and feedback.
 The system simplifies the entire workflow: collecting user feedback → storing it → analyzing the data → presenting the results visually and in downloadable reports.
+
 Features
 Web interface for submitting feedback entries.
 Dynamic forms designed to collect detailed feedback based on database structure.
@@ -35,21 +36,15 @@ Features
 Generate downloadable PDF reports summarizing the feedback.
 User-friendly and interactive web experience.
 
-
 Microservice 1: User Analytics and Behavior Reporting
 
 This microservice focuses on tracking how users interact with our platform. It collects data like session times, traffic sources (where users came from — ads, Google, etc.), what users clicked, what they searched for, and how long they stayed. Using this data, it creates detailed reports that show patterns like: which parts of the app are most popular, when users are most active, and where we are getting the most traffic from. This helps us understand user behavior, improve the user experience, and focus marketing efforts better.
 
 In Points:
-
 Tracks user sessions, clicks, searches, and traffic sources.
-
 Collects data on user activity: when they login, logout, and what they browse.
-
 Analyzes user engagement: most visited pages, average session times, peak usage hours.
-
 Helps in marketing by showing which traffic sources are bringing the most users.
-
 Reports help the business improve the app and marketing strategies based on real user behavior.
 
 Microservice 2: User Behavior Analysis
@@ -58,17 +53,11 @@ This microservice looks deeper into how users behave while they use the app — 
 This analysis helps make smarter decisions — like where to fix problems in the app, and how to keep users happy and coming back.
 
 In Points:
-
 Tracks user journey inside the app (page flow, actions taken, time spent).
-
 Analyzes user retention: how often users return after their first visit.
-
 Finds drop-off points: where users quit without completing actions.
-
 Calculates key metrics like Retention Rate, Churn Rate, and Conversion Rate.
-
 Helps optimize the app to improve user satisfaction and increase bookings.
-
 Provides detailed behavior reports for product and business teams.
 
 Microservice 3: Feedback Analytics and Reporting
@@ -76,15 +65,43 @@ Microservice 3: Feedback Analytics and Reporting
 This microservice focuses on collecting and analyzing feedback from users about flights, hotels, trains, and buses. It gathers information like ratings, comments, and categories of complaints or praise. Then, it analyzes the feedback to find trends — for example, common complaints about hotel cleanliness or high ratings for flight services. It visualizes the results in graphs and also generates reports (like PDFs) to easily share insights. This helps the company identify areas that need improvement and maintain quality service.
 
 In Points:
-
 Collects detailed user feedback: ratings, comments, categories (flight, hotel, train, bus).
-
 Organizes the feedback based on service type and satisfaction levels.
-
 Performs sentiment analysis and trend analysis on user comments.
-
 Generates visual reports (charts, graphs) using tools like Matplotlib and Seaborn.
-
 Creates PDF reports for easy sharing with management teams.
-
 Helps improve service quality by highlighting problem areas and strengths.
+
+---
+
+## 🐳 Docker Containers and Deployment
+
+To ensure scalability and easy deployment, the entire project is containerized using **Docker**, and coordinated using **Docker Compose**. Each microservice, along with the frontend and gateway, runs in its own isolated container.
+
+### Containers:
+
+1. **user-analytics-service**
+   - Runs the `useranalytics.py` script.
+   - Handles data collection for user sessions, page visits, and referral tracking.
+
+2. **user-behavior-service**
+   - Runs the `behavior_analysis.py` script.
+   - Analyzes user retention, churn, and interaction behavior inside the app.
+
+3. **feedback-analysis-service**
+   - Runs the `feedback_analysis_supabase.py` script.
+   - Pulls feedback from Supabase, analyzes ratings and comments, and generates graphs/PDFs.
+
+4. **streamlit-web-app**
+   - Runs `streamlit_app.py`.
+   - Provides the front-end interface for user input and viewing reports.
+
+5. **main-gateway**
+   - Entry point of the system.
+   - Defined in `main.py`, routes requests to the appropriate microservices.
+
+### Docker Compose:
+The `docker-compose.yml` file located in the `main_gateway` directory brings up all services at once. It links containers via networks, defines ports, and sets dependencies for a smooth startup.
+
+> 🔁 This setup enables the system to be deployed with a single command (`docker-compose up`) and ensures all microservices communicate reliably.
+
