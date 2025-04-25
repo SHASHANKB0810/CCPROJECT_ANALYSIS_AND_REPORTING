@@ -7,6 +7,7 @@ Name : Skandesh K       SRN : PES1UG22AM162
 Github Link : https://github.com/SHASHANKB0810/CCPROJECT_ANALYSIS_AND_REPORTING
 
 Tools Used : 
+Docker
 Python – Core programming language.
 Supabase – Cloud database (PostgreSQL) for data storage and sharing.
 PostgreSQL – Backend database.
