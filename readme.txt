@@ -103,5 +103,5 @@ To ensure scalability and easy deployment, the entire project is containerized u
 Docker Compose:
 The `docker-compose.yml` file located in the `main_gateway` directory brings up all services at once. It links containers via networks, defines ports, and sets dependencies for a smooth startup.
 
-> 🔁 This setup enables the system to be deployed with a single command (`docker-compose up`) and ensures all microservices communicate reliably.
+> This setup enables the system to be deployed with a single command (`docker-compose up`) and ensures all microservices communicate reliably.
 
